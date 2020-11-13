@@ -1,9 +1,3 @@
-/*Al menos 3 clases
-Cada objeto debe estar completo con constructor y atributos, (métodos si es necesario).
-Explica la lógica de tu programa.
-Sigue las reglas de estilo para C++.
-Diseña y documenta pruebas en el main para demostrar que tus objetos funcionan.*/
-/*productos ecológicos tienen 20% de descuento, productos contaminantes tienen un impuesto del 3%, si entregas un producto o prenda para reusar tienes un cupón de descuento*/
 #include <iostream>
 using namespace std;
 
