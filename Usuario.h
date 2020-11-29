@@ -17,6 +17,7 @@
 
 #include<iostream>
 #include <string> 
+#include <sstream>
 
 using namespace std; 
 
@@ -29,7 +30,6 @@ class Usuario{
  //Declaro los atributos 
   
   string nombre;
-  string apellido;
   string user_id;
 
 
@@ -37,81 +37,99 @@ class Usuario{
 
  //Constructor por deffault
   
-  Usuario():nombre(""), apellido(""), user_id(""){};
+  Usuario():nombre(""), user_id(""){};
 
   //Constructor que tiene variables preestablecidas
   
-  Usuario(string nom, string user, string p):nombre(nom), user_id(user), apellido(p){};
-
-  //Declaro los métodos que tendrá el objeto
+  Usuario(string nom, string user):nombre(nom), user_id(user){};
+ 
+ //setters
   
-  void setNombre(string,string);
+  void setNombre(string);
   void setUsuario(string);
-  string getNombre(); 
-  string getApellido(); 
+
+  //getters
+  
+  string getNombre();
   string getUsuario();
-  string toString() const;
 
 };
 
-//Se definen los setters de la clase Usuario
-
-void Usuario::setNombre(string _nombre, string _apellido){
-  nombre=_nombre;
-  apellido=_apellido;
-}
-
-//Se definen los setters de la clase Usuario
-
-void Usuario::setUsuario(string user_nombre){
-  user_id=user_nombre;
-}
-
-//Se definen los getters de la clase Usuario
-
-string Usuario::getApellido(){
-  return apellido;
-}
-
-//Se definen los getters de la clase Usuario
+//Se establecen los getters de la clase Usuario
 
 string Usuario::getNombre(){
   return nombre;
 }
 
-//Se definen los getters de la clase Usuario
+//Se establecen los getters de la clase Usuario
 
 string Usuario::getUsuario(){
   return user_id;
 }
 
-//Se crea la clase hija Donador
+//Se establecen los setters de la clase Usuario
+
+void Usuario::setNombre(string name){
+  nombre=name;
+
+}
+
+//Se establecen los setters de la clase Usuario
+
+void Usuario::setUsuario(string user){
+  user=user_id;
+
+}
+
+//Se crea la clase Coordinador que es hija de Usuario
+
+class Coordinador: public Usuario{
+  //Se establecen los atributos de la clase Coordinador
+ public: 
+  Coordinador():nombre(""), user_id(""){};//Constructor por deffault
+  Coordinador(string, string); //Constructor con variables preestablecidas
+  void consultarPagos(Organizacion); 
+  void calculaProyectos(Organizacion); 
+
+};
+Coordinador:Coordinador(string nom, string user):Usuario(string nom, string user){
+
+}
+void consultarPagos(Organizacion){
+
+
+}
+
+void calculaProyectos(Organizacion){
+
+}
+ 
+ //Se crea la clase Donador que es hija de Usuario
+
 class Donador: public Usuario{
   protected:
    float cantidad;
    string concepto;
+
+  //Se establecen los atributos de la clase Coordinador
   public: 
-  
-  //Constructor por deffault
- 
-  Donador():nombre(""), apellido(""), user_id(""), cantidad(0), concepto(""){};
-  
-  //Constructor que tiene variables preestablecidas
- 
-  Donador(string, string, string, float, string);
-  
-  //se crea función que almacene los pagos (incluyendo concepto, monto y usuario)
-  
-  void agregar_pago(); 
+   Donador():nombre(""), user_id(""),cantidad(0),concepto(""){};//Constructor por deffault
+   Coordinador(string, string, float, string); //Constructor con variables preestablecidas
+   void agregarPago(Organizacion);
 
 };
-  //Constructor que tiene variables preestablecidas
-Donador::Donador(string _nombre, string _apellido, string user_nombre, float _cantidad, string _concepto):Usuario(string_nombre, string _apellido, string user_nombre){
-cantidad=_cantidad;
-concepto=_concepto;
+
+//Se crea el Constructor
+Donador:Donador(string nom, string user,float cant, string concept):Usuario(string nom, string user){
+cantidad=cant;
+concepto=concept;
+}
+
+//Se crea la función que registra los pagos
+void agregarPago(Organizacion){
+
 
 }
-  //se crea función que almacene los pagos (incluyendo concepto, monto y usuario)
-void Donador::agregar_pago(){
 
-}
+
+ 
