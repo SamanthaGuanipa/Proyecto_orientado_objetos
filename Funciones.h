@@ -18,6 +18,10 @@ class Funciones{
   public:
   void agregarPago(Organizacion *org);
   void consultarHistorial();
+  void agregarCoordinador();
+  void agregarDonador();
+
+  
 };
 
 void Funciones::agregarPago(Organizacion *org){
@@ -30,5 +34,26 @@ void Funciones::consultarHistorial(){
  org.historial();
 
 }
+void Funciones::agregarCoordinador(){
+  string nombre, usuario;
+  cout<<"Nombre: ";
+  cin>>nombre;
+  cout<<"Usuario: ";
+  cin>>usuario;
+  coordinadores[coordPosicion] = Coordinador(nombre,usuario);
+  coordPosicion++;
+
+}
+void Funciones::agregarDonador(){
+  string nombre, usuario;
+  cout<<"Nombre: ";
+  cin>>nombre;
+  cout<<"Usuario: ";
+  cin>>usuario;
+  donadores[donaPosicion] = Donador(nombre,usuario);
+  coordPosicion++;
+}
+
 
 #endif
+
