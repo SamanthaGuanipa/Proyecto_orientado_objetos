@@ -20,7 +20,6 @@
 #include<iostream>
 #include <string> 
 #include <sstream>
-#include "Usuario.h"
 
 using namespace std; 
 
@@ -40,6 +39,7 @@ class Organizacion{
   int coordPosicion = 0;
   Donador donadores[100]; 
   int donaPosicion=0; 
+ 
   
 public:
   //Constructor por deffault
