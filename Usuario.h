@@ -6,14 +6,16 @@
  */
 
 /*
- * Clase Usuario contiene los métodos genéricos para el manejo de los usuarios
- * y tiene 2 clases hijas que especifican el tipo de usuario:
- * Donador y Coordinador
+ * Clase Organización contiene los métodos genéricos para el manejo de la Organización
+ * y se compone de la clase usuario. Tiene asociación con las clases Donador y Coordinador
+ * 
  *
  */
 
-#ifndef USUARIO_H_
-#define USUARIO_H_
+ //USAR EJEMPLO AUTO Y LLANTAS PARA LA COMPOSICIÓN
+
+#ifndef ORGANIZACION_H_
+#define ORGANIZACION_H_
 
 #include<iostream>
 #include <string> 
@@ -21,147 +23,95 @@
 
 using namespace std; 
 
-//Declaracion de clase "Usuario" que es abstracta
+//Declaracion de clase "Organizacion" 
 
-class Usuario{
+class Organizacion{
 
  protected:
  
  //Declaro los atributos 
   
   string nombre;
-  string user_id;
-
-
- public:  
-
- //Constructor por deffault
-  
-  Usuario();
-
-  //Constructor que tiene valores preestablecidos
-  
-  Usuario(string nom, string user);
+  int posicion = 0;
+  string concepto[100];
+  float pago[100];
+  Coordinador coordinadores[10];
+  int coordPosicion = 0;
+  Donador donadores[100]; 
+  int donaPosicion=0; 
  
- //setters
   
-  void setNombre(string);
-  void setUsuario(string);
-
-  //getters
+public:
+  //Constructor por deffault
   
-  string getNombre();
-  string getUsuario();
+  Organizacion();
 
+  //Constructor que tiene variables preestablecidas
+  
+  Organizacion(string nom);
+ 
+  void set_nombre(string);
+  string get_nombre();
+  void getPagos();
+  void getConceptos();
+  void historial();
+  float calcularTotal();
 };
 
-//Constructor por deffault
-
-Usuario::Usuario(){
-  nombre="";
-  user_id="";
+//Constructor por deffault 
+Organizacion::Organizacion(){
+  nombre=""; 
 }
-
-//Constuctor valores determinados
-Usuario::Usuario(string nom, string user){
-  nom=nombre;
-  user=user_id;
+Organizacion::Organizacion(string nom){
+  nombre=nom; 
 }
+//Se establecen los getters de la clase Organizacion
 
-//Se establecen los getters de la clase Usuario
-
-string Usuario::getNombre(){
+string Organizacion::get_nombre(){
   return nombre;
 }
+//Se establecen los setters de la clase Organizacion
 
-//Se establecen los getters de la clase Usuario
-
-string Usuario::getUsuario(){
-  return user_id;
+void Organizacion::set_nombre(string nomb){
+  nombre=nomb;
 }
 
-//Se establecen los setters de la clase Usuario
-
-void Usuario::setNombre(string name){
-  nombre=name;
+void Organizacion::getPagos(){
+  int numeroPagos;
+  cout<<"Ingrese el número de pagos a realizar"<<endl;
+  cin>>numeroPagos;
+  int minimo = posicion;
+  for(int i=posicion; i<minimo+numeroPagos; i++)
+  {
+    cout<<"Ingrese el pago a realizar "<<(i+1)<<": ";
+    cin>>pago[i] ;
+    cout<<"Ingrese el concepto del pago a realizar "<<(i+1)<<": ";
+    cin>>concepto[i] ;
+    posicion++;
+  }
 
 }
 
-//Se establecen los setters de la clase Usuario
-
-void Usuario::setUsuario(string user){
-  user=user_id;
-
-}
-
-//Se crea la clase Coordinador que es hija de Usuario
-
-class Coordinador: public Usuario{
-  //Se establecen los atributos de la clase Coordinador
- public: 
-  Coordinador();//Constructor por deffault
-  Coordinador(string nom, string user); //Constructor con variables preestablecidas
-  //void calcularProyectos(Organizacion org);
- 
-
-};
-
-Coordinador::Coordinador(){
-  nombre="";
-  user_id="";
-}
-
-Coordinador::Coordinador(string nom, string user){
-  nom=nombre;
-  user=user_id;
+void Organizacion::historial(){
+ for (int i=0; i<posicion; i++)
+ {
+   cout<<"Pago "<<i+1<<":\n";
+   cout<<"Concepto: "<<concepto[i]<<endl;
+   cout<<"Cantidad: "<<pago[i]<<endl;
+ }
 }
 
 
-//void Coordinador::calcularProyectos(Organizacion org){
-  //cout<<"Ingrese el monto por proyecto: ";
- // float monto;
-  //cin>>monto;
-  //float total=org.calcularTotal();
-  //int proyectos=total/monto;
-  //cout<<"Puedes hacer: "<<proyectos<<" proyectos.";
-
-
- 
- //Se crea la clase Donador que es hija de Usuario
-
-class Donador: public Usuario{
-  protected:
-   float cantidad;
-   string concepto;
-
-  //Se establecen los atributos de la clase Coordinador
-  public: 
-   Donador();
-   Donador(string nom, string user, float cant, string concept); //Constructor con variables preestablecidas
-   //void agregarPago(Organizacion *org);
-   int getPagos();
-
-};
-
-//Constructor por deffault
-Donador::Donador(){
-  nombre="";
-  user_id="";
-  cantidad=0.0;
-  concepto="";
+float Organizacion::calcularTotal(){
+  int suma=0;
+  for (int i=0; i<posicion;i++)
+  {
+   suma+=pago[i]; 
+   
+  }
+  return suma;
 }
 
-//Se crea el Constructor
-Donador::Donador(string nom, string user,float cant, string concept){
-  nom=nombre;
-  user=user_id;
-  cant=cantidad;
-  concept=concepto;
-}
-
-int Donador::getPagos(){
-  return cantidad;
-}
 
 
 #endif
