@@ -1,0 +1,25 @@
+Sub-Competencia:Codifico métodos y atributos de clase correctamente. (constructores, getters, setters)(avance 1)
+
+Error original: No contaba con getters ni setters 
+
+Cambio realizado: agregué getters y setters 
+
+Líneas de código donde se ve la corrección: Archivo Organización.h linea 53-56. Archivo Usuario.h linea 48-54. 
+
+------------------------------------------------------------------------------------------
+Sub-Competencia: Compruebo el acceso a los atributos y métodos de la clase (encapsulamiento correcto, mando a llamar los objetos de forma útil). (avance 1)
+
+Error original: No accedía a los atributos. 
+
+Cambio realizado:Se accede a los atributos 
+
+Líneas de código donde se ve la corrección: Usuario.h linea 79-93
+------------------------------------------------------------------------------------------
+Sub-Competencia: El estilo cumple con las normas y estándares: listar normas y estándares.
+Error original: No accedía a los atributos. 
+
+Cambio realizado:No se cumplían las normas y estándares  
+
+Líneas de código donde se ve la corrección: todo el código
+
+
