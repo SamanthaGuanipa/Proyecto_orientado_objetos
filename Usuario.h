@@ -37,11 +37,11 @@ class Usuario{
 
  //Constructor por deffault
   
-  Usuario():nombre(""), user_id(""){};
+  Usuario();
 
-  //Constructor que tiene variables preestablecidas
+  //Constructor que tiene valores preestablecidos
   
-  Usuario(string nom, string user):nombre(nom), user_id(user){};
+  Usuario(string nom, string user);
  
  //setters
   
@@ -54,6 +54,19 @@ class Usuario{
   string getUsuario();
 
 };
+
+//Constructor por deffault
+
+Usuario::Usuario(){
+  nombre="";
+  user_id="";
+}
+
+//Constuctor valores determinados
+Usuario::Usuario(string nom, string user){
+  nom=nombre;
+  user=user_id;
+}
 
 //Se establecen los getters de la clase Usuario
 
@@ -86,23 +99,33 @@ void Usuario::setUsuario(string user){
 class Coordinador: public Usuario{
   //Se establecen los atributos de la clase Coordinador
  public: 
-  Coordinador():nombre(""), user_id(""){};//Constructor por deffault
-  Coordinador(string, string); //Constructor con variables preestablecidas
-  void consultarPagos(Organizacion); 
-  void calculaProyectos(Organizacion); 
+  Coordinador();//Constructor por deffault
+  Coordinador(string nom, string user); //Constructor con variables preestablecidas
+  //void calcularProyectos(Organizacion org);
+ 
 
 };
-Coordinador:Coordinador(string nom, string user):Usuario(string nom, string user){
 
-}
-void consultarPagos(Organizacion){
-
-
+Coordinador::Coordinador(){
+  nombre="";
+  user_id="";
 }
 
-void calculaProyectos(Organizacion){
-
+Coordinador::Coordinador(string nom, string user){
+  nom=nombre;
+  user=user_id;
 }
+
+
+//void Coordinador::calcularProyectos(Organizacion org){
+  //cout<<"Ingrese el monto por proyecto: ";
+ // float monto;
+  //cin>>monto;
+  //float total=org.calcularTotal();
+  //int proyectos=total/monto;
+  //cout<<"Puedes hacer: "<<proyectos<<" proyectos.";
+
+
  
  //Se crea la clase Donador que es hija de Usuario
 
@@ -113,23 +136,32 @@ class Donador: public Usuario{
 
   //Se establecen los atributos de la clase Coordinador
   public: 
-   Donador():nombre(""), user_id(""),cantidad(0),concepto(""){};//Constructor por deffault
-   Coordinador(string, string, float, string); //Constructor con variables preestablecidas
-   void agregarPago(Organizacion);
+   Donador();
+   Donador(string nom, string user, float cant, string concept); //Constructor con variables preestablecidas
+   //void agregarPago(Organizacion *org);
+   int getPagos();
 
 };
 
+//Constructor por deffault
+Donador::Donador(){
+  nombre="";
+  user_id="";
+  cantidad=0.0;
+  concepto="";
+}
+
 //Se crea el Constructor
-Donador:Donador(string nom, string user,float cant, string concept):Usuario(string nom, string user){
-cantidad=cant;
-concepto=concept;
+Donador::Donador(string nom, string user,float cant, string concept){
+  nom=nombre;
+  user=user_id;
+  cant=cantidad;
+  concept=concepto;
 }
 
-//Se crea la función que registra los pagos
-void agregarPago(Organizacion){
-
-
+int Donador::getPagos(){
+  return cantidad;
 }
 
 
- 
+#endif
