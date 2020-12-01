@@ -7,13 +7,9 @@ En la preparación de este evento, muchas veces existen discusiones debido al ma
 
 Objetivos específicos y plan de acción: 
 
-Registrar los nombres de los voluntarios que pertenezcan a esta organización que no aporten dinero, sino servicios a la comunidad. 
-
-Registrar las horas de servicio de los voluntarios que pertenezcan a esta organización que puedan usar para validar su servicio social. 
-
 Administrar los recursos que sean donados a "La olla solidaria", al tener un control digital de los ingresos aportados al proyecto. 
 
-Permitir a los coordinadores del proyecto estar en conocimiento de cuánto han recibido y qué han recibido; y a los donadores saber la necesidad de la persona a la que donarán. 
+Permitir a los coordinadores del proyecto estar en conocimiento de cuánto dinero han recibido y para qué lo han recibido; y a los donadores de depositar el dinero y su concepto de pago. 
 
 Lograr que los coordinadores del proyecto sepan por medio del programa el alcance de las donaciones para la planificación y ejecución de la actividad a partir de ello. 
 
