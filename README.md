@@ -27,7 +27,9 @@ Para poder consultar el historial, los nombres de coordinadores y donadores es d
 # Correcciones 
 
 Se implementa composición (Entre las clases Organizacion, Usuario y Funciones) y agregación (entre la clase Organización y la clase Usuario) siguiendo mi diagrama de clases. 
+
 Se comprueba el acceso a los atributos y métodos de todas las clase (encapsulamiento correcto, mando a llamar los objetos de forma útil).
 Codifico métodos y atributos de clase correctamente. (constructores, getters, setters) en todas las clases. 
+
 El estilo cumple con las normas y estándares en todas las clases. 
 
