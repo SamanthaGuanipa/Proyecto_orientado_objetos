@@ -55,6 +55,8 @@ class Usuario{
   string getNombre();
   string getUsuario();
 
+  
+
 };
 
 //Constructor por deffault
@@ -99,26 +101,35 @@ void Usuario::setUsuario(string user){
 //Se crea la clase Coordinador que es hija de Usuario
 
 class Coordinador: public Usuario{
+
   //Se establecen los atributos de la clase Coordinador
+
  public: 
-  Coordinador();//Constructor por deffault
-  Coordinador(string nom, string user); //Constructor con variables preestablecidas
+
+//Constructor por deffault
+  Coordinador();
+
+//Constructor con variables preestablecidas
+  Coordinador(string nom, string user); 
   void consultarHistorial(Organizacion org);
   void calcularProyectos(Organizacion org);
  
 
 };
 
+//Constructor por deffault
 Coordinador::Coordinador(){
   nombre="";
   user_id="";
 }
 
+//Constructor con valores preestablecidos
 Coordinador::Coordinador(string nom, string user){
   nom=nombre;
   user=user_id;
 }
 
+//Se crea la funcion CalcularProyectos que toma la suma realizada en organizacion y la aplica acá para el cálculo
 
 void Coordinador::calcularProyectos(Organizacion org){
   cout<<"Ingrese el monto por proyecto: ";
@@ -129,6 +140,8 @@ void Coordinador::calcularProyectos(Organizacion org){
   cout<<"Puedes hacer: "<<proyectos<<" proyectos.";
 
 }
+
+//Se crea la función consultarHistorial que recibe un objeto Organizacion
 void Coordinador::consultarHistorial(Organizacion org){
  org.historial();
 
@@ -137,9 +150,13 @@ void Coordinador::consultarHistorial(Organizacion org){
  //Se crea la clase Donador que es hija de Usuario
 
 class Donador: public Usuario{
+
+//Se establecen los atributos
   protected:
    float cantidad;
    string concepto;
+
+
   //Se establecen los atributos de la clase Coordinador
   public: 
    Donador();
@@ -176,4 +193,4 @@ void Donador::agregarPago(Organizacion *org){
 }
 
 
-#endif
+#endif //USUARIO_H_
