@@ -1,3 +1,10 @@
+/*
+ * Proyecto POO
+ * Samantha Daniela Guanipa Ugas
+ * A01703936
+ * 26/11/2020
+ */
+
 //Se incluyen las clases y las librerias 
 
 #include "Funciones.h"
@@ -36,8 +43,8 @@ int main() {
   //Se crean los objetos de las clases del programa
   Organizacion org;
   Organizacion prueba;
-	Coordinador coord;
-	Donador don;
+  Coordinador coord;
+  Donador don;
   Funciones Fun;
    
    //Se inicializa la variable opcion "opc"
@@ -47,6 +54,7 @@ int main() {
    
    //El menú seguirá imprimiéndose hasta que se seleccione salir 
    while (opc<5 && opc>-1){
+	   
      //Se imprimirá el menú 
      menu(); 
     
