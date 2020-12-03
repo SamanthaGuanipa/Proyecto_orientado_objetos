@@ -1,10 +1,3 @@
-/*
- * Proyecto POO
- * Samantha Daniela Guanipa Ugas
- * A01703936
- * 26/11/2020
- */
-
 //Se incluyen las clases y las librerias 
 
 #include "Funciones.h"
@@ -53,7 +46,7 @@ int main() {
    
    
    //El menú seguirá imprimiéndose hasta que se seleccione salir 
-   while (opc<6 && opc>-1){
+   while (opc<5 && opc>-1){
      //Se imprimirá el menú 
      menu(); 
     
@@ -74,13 +67,13 @@ int main() {
 
      
      case 3: 
-        cout<<"Eligió ver la lista de coordinadores: "; 
+        cout<<"Eligió ver la lista de coordinadores: "<<endl;
         Fun.mostrarCoordinador();
      break; 
      
      
      case 4: 
-       cout<<"Eligió ver la lista de donadores: "; 
+       cout<<"Eligió ver la lista de donadores: "<<endl; 
         Fun.mostrarDonador();
      break; 
     
@@ -125,7 +118,9 @@ int main() {
 
         }
         //Se sale del menú
-   case 5: break;
+   case 5: 
+   cout<<"Gracias por apoyarnos, hasta luego"<<endl;
+   break;
   
          
    }
@@ -134,3 +129,4 @@ int main() {
 
   
 }
+
