@@ -1,3 +1,10 @@
+/*
+ * Proyecto POO
+ * Samantha Daniela Guanipa Ugas
+ * A01703936
+ * 26/11/2020
+ */
+
 //Se incluyen las clases y las librerias 
 
 #include "Funciones.h"
