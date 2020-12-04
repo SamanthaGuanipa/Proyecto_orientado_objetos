@@ -54,7 +54,6 @@ int main() {
    
    //El menú seguirá imprimiéndose hasta que se seleccione salir 
    while (opc<5 && opc>-1){
-	   
      //Se imprimirá el menú 
      menu(); 
     
@@ -135,5 +134,6 @@ int main() {
 
    }
 
-  
+  return 0;
 }
+
