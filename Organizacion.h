@@ -57,7 +57,7 @@ public:
   void set_nombre(string);
   string get_nombre();
   void getPagos();
-  void getConceptos();
+  string getConceptos();
   void historial();
   float calcularTotal();
 };
@@ -82,6 +82,10 @@ Organizacion::Organizacion(string nom, string user_1, string conce, float cant){
 
 string Organizacion::get_nombre(){
   return nombre;
+}
+
+string Organizacion::getConceptos(){
+  return concept;
 }
 
 //Se establecen los setters de la clase Organizacion
